@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>Start Page</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Poppins font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+
+    <!-- Awesome Icons stylesheet -->
+    <link
+      rel="stylesheet"
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <noscript>This thing is dead without JavaScript</noscript>
+
+    <!-- The main stuff starts from here -->
+    <div id="container">
+      <!-- Date -->
+      <div><span id="date"></span></div>
+
+      <div style="margin-top: 5px">
+        <!-- Time -->
+        <span id="time"></span>
+        <!-- Temperature -->
+        <span id="temperature"></span>
+        <!-- Weather condition -->
+        <span id="weather-condition"></span>
+      </div>
+
+      <!-- Extra 40px height -->
+      <div style="height: 40px"></div>
+
+      <!-- The search bar -->
+      <input id="searchbar" placeholder="Search..." autocomplete="off" />
+
+      <!-- Extra 40px height -->
+      <div style="height: 40px"></div>
+
+      <!-- Some quick links. Change them as you like -->
+      <div id="button-container">
+        <!--
+				SYNTAX
+				<button>
+					<a href="link-to-website">
+						<i class="fa fa-name"></i> <-- This is the icon. I'm using AwesomeIcons for this 
+					</a>
+				</button>
+				Why did I use button? Because applying CSS on <a> is a mess
+			  -->
+
+        <button>
+          <a href="https://www.youtube.com">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </button>
+        <button>
+          <a href="https://www.twitch.tv">
+            <i class="fab fa-twitch"></i>
+          </a>
+        </button>
+        <button>
+          <a href="https://www.github.com">
+            <i class="fab fa-github"></i>
+          </a>
+        </button>
+        <button>
+          <a href="https://www.reddit.com">
+            <i class="fab fa-reddit"></i>
+          </a>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- JS for the weather feature -->
+    <script src="weather.js"></script>
+  </body>
+</html>
