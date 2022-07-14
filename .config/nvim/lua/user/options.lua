@@ -44,6 +44,7 @@ vim.opt.number = true -- Show line numbers
 vim.opt.mouse = "a" -- Enable mouse in nvim
 vim.opt.splitbelow = true -- Horizontal split go below the current window
 vim.opt.splitright = true -- Vertical split go to the right of the current window
+vim.opt.termguicolors = true -- Set term gui colors
 
 -----------
 -- Other --
