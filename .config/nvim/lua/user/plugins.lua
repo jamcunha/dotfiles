@@ -49,6 +49,11 @@ return packer.startup(function(use)
     -- Colorschemes --
     use "arcticicestudio/nord-vim" -- Nord Theme
 
+    -- Languages Syntax and Color Highlight --
+    use "PotatoesMaster/i3-vim-syntax" -- i3wm config syntax
+    use "kovetskiy/sxhkd-vim" -- sxhkd syntax
+    use "norcalli/nvim-colorizer.lua" -- Color Highlight
+
     -- Completion --
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer" -- Buffer completion
