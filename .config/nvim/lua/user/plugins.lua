@@ -54,10 +54,20 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-buffer" -- Buffer completion
     use "hrsh7th/cmp-path" -- Path completion
     use "saadparwaiz1/cmp_luasnip" -- Snippets completion
+    use "hrsh7th/cmp-nvim-lsp" -- LSP integration for cmp
+    use "hrsh7th/cmp-nvim-lua" -- Neovim Lua API 
 
     -- Snippets --
     use "L3MON4D3/LuaSnip" -- Snippet engine
     use "rafamadriz/friendly-snippets" -- Snippet Library
+
+    -- LSP --
+    use "neovim/nvim-lspconfig" -- Enable LSP
+    use "williamboman/nvim-lsp-installer" -- Simplify Installing LSPs
+    use "RRethy/vim-illuminate" -- Highlights uses of current word under cursor
+    use "b0o/schemastore.nvim" -- Schemastore
+        -- Java
+        -- use "mfussenegger/nvim-jdtls" -- Java LSP
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
