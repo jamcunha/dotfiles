@@ -2,7 +2,7 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 -- Modes
 --   normal_mode = "n",
@@ -34,8 +34,8 @@ keymap("n", "<C-S-Up>", ":resize -2 <CR>", opts)
 keymap("n", "<C-S-Right>", ":vertical resize +2 <CR>", opts)
 
 -- Search
-keymap("n", "<Space>", "/", { })
-keymap("n", "<leader><CR>", ":noh <CR>", opts)
+keymap("n", ",", "/", { })
+keymap("n", ",<CR>", ":noh <CR>", opts)
 
 -- Increment and Decrement
 keymap("n", "+", "<C-a>", opts)
@@ -50,7 +50,12 @@ keymap("n", "<C-S-Down>", "yyp", opts)
 keymap("n", "<C-S-Up>", "yyP", opts)
 
 -- Buffer
-keymap("n", "bd", ":bdelete <CR>", opts)
+keymap("n", "<leader>bd", ":bdelete <CR>", opts)
+
+-- Telescope
+keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -----------------
 -- Insert Mode --

@@ -69,6 +69,9 @@ return packer.startup(function(use)
         -- Java
         -- use "mfussenegger/nvim-jdtls" -- Java LSP
 
+    -- Telescope --
+    use "nvim-telescope/telescope.nvim" -- Fuzzy Finder
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
