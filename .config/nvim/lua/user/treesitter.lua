@@ -46,5 +46,8 @@ configs.setup {
         },
 
     },
+    autopairs = {
+        enable = true,
+    },
 }
 
