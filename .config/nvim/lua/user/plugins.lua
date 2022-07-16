@@ -79,6 +79,10 @@ return packer.startup(function(use)
     -- Telescope --
     use "nvim-telescope/telescope.nvim" -- Fuzzy Finder
 
+    -- File Explorer
+    use "kyazdani42/nvim-tree.lua" -- File Explorer
+    use "kyazdani42/nvim-web-devicons" -- Web dev icons
+
     -- QoL --
     use "windwp/nvim-autopairs" -- Autopairs
     use "numToStr/Comment.nvim" -- Comments

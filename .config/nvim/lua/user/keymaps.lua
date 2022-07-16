@@ -52,6 +52,9 @@ keymap("n", "<C-S-Up>", "yyP", opts)
 -- Buffer
 keymap("n", "<leader>bd", ":bdelete <CR>", opts)
 
+-- NvimTree
+keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
+
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)

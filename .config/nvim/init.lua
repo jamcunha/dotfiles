@@ -9,4 +9,6 @@ require "user.colorizer"
 require "user.treesitter"
 require "user.autopairs"
 require "user.comment"
+require "user.nvim-tree"
+require "user.nvim-webdev-icons"
 
