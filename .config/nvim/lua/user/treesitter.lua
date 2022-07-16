@@ -49,5 +49,8 @@ configs.setup {
     autopairs = {
         enable = true,
     },
+    context_commentstring = {
+        enable = true,
+    },
 }
 

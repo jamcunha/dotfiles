@@ -81,6 +81,8 @@ return packer.startup(function(use)
 
     -- QoL --
     use "windwp/nvim-autopairs" -- Autopairs
+    use "numToStr/Comment.nvim" -- Comments
+    use "JoosepAlviste/nvim-ts-context-commentstring" -- Comment integration with jsx/tsx (need nvim-treesitter)
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

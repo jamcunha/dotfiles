@@ -57,6 +57,17 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
+-- Comment Keymaps
+--[[
+    <gcc> -> Comment current line linewise (ex. //)
+    <gbc> -> Comment current line blockwise (ex. /* */)
+    <gco> -> Insert comment to the next line and enters INSERT mode (ex. func exmp()
+                                                                        // Insert Comment)
+    <gcO> -> Insert comment to the previous line and enters INSERT mode (ex. // Insert Comment
+                                                                             func exmp())
+    <gcA> -> Insert comment to end of the current line and enters INSERT mode (ex. func exmp() // Insert Comment)
+]]--
+
 -----------------
 -- Insert Mode --
 -----------------
@@ -84,4 +95,12 @@ keymap("v", "<A-Up>", ":m '<-2<CR>gv=gv", opts)
 -- Don't leave visual mode after indent
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Comment Keymaps
+--[[
+    <gc> -> Comment block linewise (ex. // func exmp()
+                                        // i = 0)
+    <gb> -> Comment block blockwise (ex. /* func exmp()
+                                            i = 0 */)
+]]--
 
