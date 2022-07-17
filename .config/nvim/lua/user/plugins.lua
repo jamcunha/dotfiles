@@ -73,6 +73,7 @@ return packer.startup(function(use)
     use "williamboman/nvim-lsp-installer" -- Simplify Installing LSPs
     use "RRethy/vim-illuminate" -- Highlights uses of current word under cursor
     use "b0o/schemastore.nvim" -- Schemastore
+    use { "glepnir/lspsaga.nvim", branch = "main" } -- LSP better UI
         -- Java
         -- use "mfussenegger/nvim-jdtls" -- Java LSP
 

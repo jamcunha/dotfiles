@@ -33,6 +33,9 @@ keymap("n", "<C-S-Down>", ":resize +2 <CR>", opts)
 keymap("n", "<C-S-Up>", ":resize -2 <CR>", opts)
 keymap("n", "<C-S-Right>", ":vertical resize +2 <CR>", opts)
 
+-- Buffer
+keymap("n", "<leader>bd", ":bdelete <CR>", opts)
+
 -- Search
 keymap("n", ",", "/", { })
 keymap("n", ",<CR>", ":noh <CR>", opts)
@@ -49,9 +52,6 @@ keymap("n", "<A-Up>", ":m .-2<CR>==", opts)
 keymap("n", "<C-S-Down>", "yyp", opts)
 keymap("n", "<C-S-Up>", "yyP", opts)
 
--- Buffer
-keymap("n", "<leader>bd", ":bdelete <CR>", opts)
-
 -- NvimTree
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 
@@ -59,6 +59,12 @@ keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+
+-- Lspsaga
+keymap("n", "K", ":Lspsaga hover_doc<CR>", opts)
+keymap("n", "gl", ":Lspsaga show_line_diagnostics<CR>", opts)
+keymap("n", "<leader>ca", ":Lspsaga code_action<CR>", opts)
+keymap("n", "gp", ":Lspsaga preview_definition<CR>", opts)
 
 -- Comment Keymaps
 --[[
