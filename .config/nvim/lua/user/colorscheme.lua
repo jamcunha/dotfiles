@@ -3,6 +3,7 @@
 
     Available colorschemes:
         - Nord (colorscheme = "nord")
+        - Dracula (colorscheme = "dracula")
 
 ]]--
 

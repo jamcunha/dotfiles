@@ -12,4 +12,5 @@ require "user.comment"
 require "user.nvim-tree"
 require "user.nvim-webdev-icons"
 require "user.lualine"
+require "user.bufferline"
 

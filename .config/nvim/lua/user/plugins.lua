@@ -48,6 +48,7 @@ return packer.startup(function(use)
 
     -- Colorschemes --
     use "arcticicestudio/nord-vim" -- Nord Theme
+    use { "dracula/vim", as="dracula" }
 
     -- Languages Syntax and Color Highlight --
     use "PotatoesMaster/i3-vim-syntax" -- i3wm config syntax
@@ -86,7 +87,7 @@ return packer.startup(function(use)
 
     -- Bars
     use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } } -- Statusline
-
+    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'} -- Bufferline
 
     -- QoL --
     use "windwp/nvim-autopairs" -- Autopairs
