@@ -91,6 +91,9 @@ keymap("i", "<C-S-Down>", "<ESC>yypi", opts)
 keymap("i", "<C-S-k>", "<ESC>yyPi", opts)
 keymap("i", "<C-S-Up>", "<ESC>yyPi", opts)
 
+-- Exit inset mode
+keymap("i", "ii", "<ESC>", opts)
+
 -----------------
 -- Visual Mode --
 -----------------

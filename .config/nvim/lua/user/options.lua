@@ -6,8 +6,8 @@
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.expandtab = true -- Convert tab to spaces
-vim.opt.shiftwidth = 4 -- Number of spaces on the indentation
-vim.opt.tabstop = 4 -- Number of spaces on the indentation
+vim.opt.shiftwidth = 2 -- Number of spaces on the indentation
+vim.opt.tabstop = 2 -- Number of spaces on the indentation
 vim.opt.smarttab = true -- Tab with the number of spaces equal to tabstop
 
 ------------
@@ -56,5 +56,5 @@ vim.opt.clipboard = "unnamedplus" -- Allows nvim to use system clipboard
 vim.opt.undofile = true -- Enables persistent undo
 vim.opt.backup = false -- Disable backups
 vim.opt.swapfile = false -- Disable swapfile
-vim.timeoutlen = 1000 -- Time to complete mapped sequences (in ms)
+vim.timeoutlen = 400 -- Time to complete mapped sequences (in ms)
 
