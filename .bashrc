@@ -4,6 +4,7 @@
 
 export EDITOR="nvim"
 export BROWSER="brave"
+export TERMINAL="alacritty"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
