@@ -118,4 +118,5 @@ client.background       #2e3440
 exec setxkbmap pt
 exec nitrogen --restore
 exec_always ~/.config/polybar/launch.sh
+exec_always autotiling
 
