@@ -1,6 +1,11 @@
 # My dotfiles
 ## WIP
 
+### How to use:
+  - Install stow
+  - (Optional) alias stow to "stow -t ~" if the repo is not in the home directory
+  - stow [whatever config you want]
+
 ## DEPENDENCIES
 
 ### Clipboard working on nvim
