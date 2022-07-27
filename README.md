@@ -17,7 +17,7 @@
     - paru -S nerd-fonts-complete ttf-font-awesome
 
 ### i3 autotiling
-  -Arch Linux:
+  - Arch Linux:
     - paru -S autotiling-git
 
 ### zsh
