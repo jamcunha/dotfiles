@@ -11,6 +11,9 @@
 ### Clipboard working on nvim
   - Arch Linux: pacman -S xsel
 
+### Nvim telescope dependencie
+  - Arch Linux: pacman -S ripgrep
+
 ### Some other dependencies
   - Arch Linux:
     - pacman -S playerctl flameshot nitrogen
