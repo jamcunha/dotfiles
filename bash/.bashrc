@@ -18,6 +18,7 @@ fi
 alias ls="exa -lah --color=always --group-directories-first"
 alias dotties="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias vim="nvim"
+alias stow="stow -t ~"
 
 ## Use the up and down arrow keys for finding a command in history
 ## (you can write some initial letters of the command first).
