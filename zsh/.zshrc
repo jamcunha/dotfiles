@@ -111,6 +111,5 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 fi
 
 alias ls="exa -lah --color=always --group-directories-first"
-alias dotties="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias vim="nvim"
 
