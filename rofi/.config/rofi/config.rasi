@@ -1,0 +1,16 @@
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+
+configuration {
+  modi: "run,ssh,drun";
+  font: "RobotoMono Nerd Font 12";
+  show-icons: true;
+  terminal: "alacritty";
+  case-sensitive: false;
+  display-drun: "Applications";
+  drun-display-format: "{icon} {name}";
+}
+
+/* Colorschemes */
+
+// @import "colorchemes/nord.rasi"
+

@@ -5,7 +5,7 @@ set $browser brave
 set $browser_private brave --incognito
 set $terminal alacritty
 set $file_manager thunar
-set $launcher rofi -show drun -show-icons
+set $launcher rofi -show drun
 set $screenshot flameshot gui
 
 font pango:monospace 0
