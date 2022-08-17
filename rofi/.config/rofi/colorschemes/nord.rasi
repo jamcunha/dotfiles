@@ -1,4 +1,6 @@
 * {
-  bg: #2e3440;
-  fg: #d8dee9;
+  background: #2e3440;
+  background-alt: #3b4252;
+  background-search: #b48ead;
+  foreground: #d8dee9;
 }

@@ -1,16 +1,180 @@
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
-
 configuration {
   modi: "run,ssh,drun";
   font: "RobotoMono Nerd Font 12";
   show-icons: true;
   terminal: "alacritty";
   case-sensitive: false;
-  display-drun: "Applications";
+  display-drun: " ";
   drun-display-format: "{icon} {name}";
 }
 
-/* Colorschemes */
+@theme "/dev/null"
 
-// @import "colorchemes/nord.rasi"
+/* Colorschemes */
+@import "colorschemes/nord.rasi"
+
+window {
+  enable: true;
+  padding: 0px;
+  margin: 0px;
+  border: 0px solid;
+  border-radius: 0px;
+  border-color: @background;
+  background-color: @background;
+  cursor: "default";
+
+  location: center;
+  anchor: center;
+  fullscreen: false;
+  width: 750px;
+  x-offset: 0px;
+  y-offset: 0px;
+
+  children: [ mainbox ];
+}
+
+mainbox {
+  enable: true;
+  padding: 10px 25px;
+  margin: 0px;
+  border: 0px solid;
+  border-radius: 0px;
+  border-color: @background;
+  background-color: @background;
+  cursor: "default";
+
+  orientation: vertical;
+  spacing: 10px;
+
+  children: [ inputbar, listview ];
+}
+
+inputbar {
+  enable: true;
+  padding: 10px 10px 10px 0px;
+  margin: 0px;
+  border: 0px solid;
+  border-radius: 0px;
+  border-color: @background;
+  background-color: @background;
+
+  text-color: @foreground;
+  spacing: 10px;
+
+  children: [ prompt, entry ];
+}
+
+prompt {
+  enable: true;
+  background-color: @background-search;
+  padding: 7px 7px 8px 12px;
+  text-color: inherit;
+  font: "Font Awesome 6 Free Solid 14";
+}
+
+entry {
+  enable: true;
+  background-color: inherit;
+  text-color: inherit;
+  placeholder: "Search...";
+  vertical-align: 0.5;
+}
+
+listview {
+  enable: true;
+  padding: 0px;
+  margin: 0px;
+  border: 0px solid;
+  border-radius: 0px;
+  border-color: @background;
+  background-color: @background;
+  cursor: "default";
+
+  columns: 1;
+  lines: 15;
+  dynamic: true;
+  scrollbar: false;
+  cycle: true;
+  spacing: 0px;
+  layout: vertical;
+  fixed-height: true;
+  fixed-column: true;
+  text-color: @foreground;
+}
+
+element {
+  enable: true;
+  padding: 5px;
+  margin: 0px;
+  border: 0px solid;
+  border-radius: 0px;
+  border-color: @background;
+  background-color: @background;
+  cursor: pointer;
+
+  spacing: 10px;
+  text-color: @foreground;
+
+  children: [ element-icon, element-text ];
+}
+
+element normal.normal {
+  background-color: @background;
+  text-color: @foreground;
+}
+
+element normal.urgent {
+  background-color: @background;
+  text-color: @foreground;
+}
+
+element normal.active {
+  background-color: @background;
+  text-color: @foreground;
+}
+
+element selected.normal {
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+
+element selected.urgent {
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+
+element selected.active {
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+
+element alternate.normal {
+  background-color: @background;
+  text-color: @foreground;
+}
+
+element alternate.urgent {
+  background-color: @background;
+  text-color: @foreground;
+}
+
+element alternate.active {
+  background-color: @background;
+  text-color: @foreground;
+}
+
+element-icon {
+  background-color: inherit;
+  text-color: inherit;
+  cursor: inherit;
+  size: 25px;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  highlight: inherit;
+  cursor: inherit;
+  vertical-align: 0.5;
+}
 
