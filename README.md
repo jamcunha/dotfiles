@@ -8,6 +8,9 @@
 
 ## DEPENDENCIES
 
+### XFCE power manager
+ - Arch Linux: pacman -S xfce4-power-manager
+
 ### Clipboard working on nvim
   - Arch Linux: pacman -S xsel
 
