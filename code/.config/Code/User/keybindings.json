@@ -1,0 +1,210 @@
+// Place your key bindings in this file to override the defaults
+
+[
+  // Exit insert mode using "ii"
+  {
+    "key": "i",
+    "command": "vscode-neovim.compositeEscape1",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "i",
+  },
+  
+  // Which Key Extension
+  {
+    "key": "space",
+    "command": "whichkey.show",
+    "when": "neovim.mode != insert && editorTextFocus", },
+
+  // Search
+  {
+    "key": ",",
+    "command": "vscode-neovim.send",
+    "when": "neovim.mode == normal && editorTextFocus",
+    "args": "/",
+  },
+  {
+    "key": ";",
+    "command": "vscode-neovim.send",
+    "when": "neovim.mode == normal && editorTextFocus",
+    "args": ":noh <CR>",
+  },
+  
+  // Increment and Decrement
+  {
+    "key": "+",
+    "command": "vscode-neovim.send",
+    "when": "neovim.mode == normal && editorTextFocus",
+    "args": "<C-a>",
+  },
+  {
+    "key": "-",
+    "command": "vscode-neovim.send",
+    "when": "neovim.mode == normal && editorTextFocus",
+    "args": "<C-x>",
+  },
+
+  // Hover
+  {
+    "key": "shift+k",
+    "command": "editor.action.showHover",
+    "when": "neovim.mode != insert && editorTextFocus",
+  },
+    
+  // Toggle Explorer
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "neovim.mode == normal",
+  },
+  
+  // Rename Files
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
+  },
+  
+  // Delete Files
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  
+  // Copy Files
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus",
+  },
+  
+  // Paste Files
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  
+  // Cut Files
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  
+  // Create New File
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  
+  
+  // Create New File
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  
+  // Open File Splitted
+  {
+    "key": "v",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  }, 
+
+  // VIM Navigation
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "listFocus && !inputFocus",
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "listFocus && !inputFocus",
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "explorerViewletVisible && filesExplorerFocus",
+  },
+  {
+    "key": "l",
+    "command": "list.select",
+    "when": "!inputFocus",
+  },
+  {
+    "key": "h",
+    "command": "list.collapse",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "editorTextFocus && suggestWidgetVisible && suggestWidgetMultipleSuggestions",
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "editorTextFocus && suggestWidgetVisible && suggestWidgetMultipleSuggestions",
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "editorTextFocus && suggestWidgetVisible && suggestWidgetMultipleSuggestions",
+  },
+  {
+    "key": "shift+tab",
+    "command": "selectPrevSuggestion",
+    "when": "editorTextFocus && suggestWidgetVisible && suggestWidgetMultipleSuggestions",
+  },
+  {
+    "key": "tab",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "shift+tab",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen",
+  },
+  
+  // Move Between Buffers
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "editorTextFocus && neovim.mode == normal",
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "editorTextFocus && neovim.mode == normal",
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.focusBelowGroup",
+    "when": "editorTextFocus && neovim.mode == normal",
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "editorTextFocus && neovim.mode == normal",
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "sideBarFocus",
+  },
+]

@@ -1,0 +1,151 @@
+// TODO: git and lsp
+{
+  "workbench.colorTheme": "Nord",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "'RobotoMono Nerd Font', 'monospace', monospace",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+  "editor.fontSize": 13,
+  "window.zoomLevel": 0.5,
+  "workbench.startupEditor": "none",
+  "editor.tabSize": 2,
+  "whichkey.bindings": [
+    // Window Split
+    {
+      "key": "v",
+      "name": "Split Vertical",
+      "type": "command",
+      "command": "workbench.action.splitEditor",
+    },
+    {
+      "key": "h",
+      "name": "Split Horizontal",
+      "type": "command",
+      "command": "workbench.action.splitEditorDown",
+    },
+        
+    // Buffers
+    {
+      "key": "b",
+      "name": "Buffers ...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "b",
+          "name": "Show all buffers",
+          "type": "command",
+          "command": "workbench.action.showAllEditors"
+        },
+        {
+          "key": "d",
+          "name": "Close active buffer",
+          "type": "command",
+          "command": "workbench.action.closeActiveEditor",
+        },
+        {
+          "key": "n",
+          "name": "Next editor",
+          "type": "command",
+          "command": "workbench.action.nextEditor"
+        },
+        {
+          "key": "p",
+          "name": "Previous editor",
+          "type": "command",
+          "command": "workbench.action.previousEditor"
+        },
+        {
+          "name": "New untitled editor",
+          "type": "command",
+          "command": "workbench.action.files.newUntitledFile"
+        },
+      ],
+    },
+    
+    // Open files and directories
+    {
+      "key": "o",
+      "name": "Open ...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "d",
+          "name": "Directory",
+          "type": "command",
+          "command": "workbench.action.files.openFolder",
+        },
+        {
+          "key": "f",
+          "name": "File",
+          "type": "command",
+          "command": "workbench.action.files.openFile",
+        },
+      ],
+    },
+    
+    // UI Stuff
+    {
+      "key": "u",
+      "name": "UI Toggle ...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "a",
+          "name": "Toggle activity bar",
+          "type": "command",
+          "command": "workbench.action.toggleActivityBarVisibility",
+        },
+        {
+          "key": "b",
+          "name": "Toggle side bar",
+          "type": "command",
+          "command": "workbench.action.toggleSidebarVisibility",
+        },
+      ],
+    },
+      
+    // Activity bar
+    {
+      "key": "s",
+      "name": "Show ...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "e",
+          "name": "Explorer",
+          "type": "command",
+          "command": "workbench.view.explorer",
+        },
+        {
+          "key": "g",
+          "name": "Git",
+          "type": "command",
+          "command": "workbench.view.scm",
+        },
+        {
+          "key": "x",
+          "name": "Extensions",
+          "type": "command",
+          "command": "workbench.view.extensions",
+        },
+      ],
+    },
+    
+    // Comments
+    {
+      "key": "c",
+      "name": "Comment",
+      "type": "command",
+      "command": "vscode-neovim.send",
+      "args": "<C-/>",    
+    },
+  ],
+  "editor.minimap.autohide": true,
+  "window.menuBarVisibility": "toggle",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.hovers.enabled": false,
+  "workbench.activityBar.visible": false,
+}
