@@ -238,8 +238,55 @@
     // LSP
     {
       "key": "l",
-      "name": "something",
+      "name": "LSP ...",
       "type": "bindings",
+      "bindings": [
+        {
+          "key": "d",
+          "name": "Definition",
+          "type": "command",
+          "command": "editor.action.revealDefinition",
+          "when": "editorHasDefinitionProvider && !isInEmbeddedEditor"
+        },
+        {
+          "key": "e",
+          "name": "Errors",
+          "type": "command",
+          "command": "workbench.actions.view.problems",
+        },
+        {
+          "key": "l",
+          "name": "Code Lens",
+          "type": "command",
+          "command": "codelens.showLensesInCurrentLine",
+        },
+        {
+          "key": "r",
+          "name": "References",
+          "type": "command",
+          "command": "editor.action.goToReferences",
+          "when": "editorHasReferenceProvider && !inReferenceSearchEditor && !isInEmbeddedEditor",
+        },
+        {
+          "key": "R",
+          "name": "Rename",
+          "type": "command",
+          "command": "editor.action.rename",
+          "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly",
+        },
+        {
+          "key": "s",
+          "name": "Go To Symbol",
+          "type": "command",
+          "command": "workbench.action.gotoSymbol",
+        },
+        {
+          "key": "S",
+          "name": "Show All Symbols",
+          "type": "command",
+          "command": "workbench.action.showAllSymbols",
+        },
+      ],
     },
     
     // Comments
