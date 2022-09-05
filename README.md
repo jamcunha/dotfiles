@@ -30,3 +30,12 @@
   - Install zsh and oh-my-zsh
   - Plugins: git, zsh-syntax-highlighting, zsh-autosuggestions
 
+### VS Code Extensions
+  - VSCode Neovim
+  - Which Key
+  - Nord
+  - Material Icon Theme
+  - GitLens
+  - C++ Extension Pack
+  - Auto Rename Tag
+  - Tailwind CSS IntelliSense
