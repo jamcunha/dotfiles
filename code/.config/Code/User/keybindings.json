@@ -13,7 +13,7 @@
   {
     "key": "space",
     "command": "whichkey.show",
-    "when": "neovim.mode != insert && editorTextFocus", },
+    "when": "neovim.mode != insert", },
 
   // Search
   {

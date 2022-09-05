@@ -112,4 +112,5 @@ fi
 
 alias ls="exa -lah --color=always --group-directories-first"
 alias vim="nvim"
+alias repos="cd $HOME/Documents/repos"
 
