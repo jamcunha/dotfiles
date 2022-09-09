@@ -104,6 +104,28 @@
         },
       ],
     },
+
+    // Terminal
+    {
+      "key": "t",
+      "name": "Terminal ...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "t",
+          "name": "Toggle terminal",
+          "type": "command",
+          "command": "workbench.action.togglePanel",
+        },
+        {
+          "key": "T",
+          "name": "Focus terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.toggleTerminal",
+          "when": "!terminalFocus",
+        }
+      ],
+    },
       
     // Activity bar
     {

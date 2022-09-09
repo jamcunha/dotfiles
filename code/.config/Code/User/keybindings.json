@@ -13,7 +13,7 @@
   {
     "key": "space",
     "command": "whichkey.show",
-    "when": "neovim.mode != insert", },
+    "when": "neovim.mode != insert && !terminalFocus", },
 
   // Search
   {
@@ -206,5 +206,20 @@
     "key": "ctrl+l",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "sideBarFocus",
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus",
+  },
+
+  // Toggle Terminal
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.togglePanel",
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel",
   },
 ]

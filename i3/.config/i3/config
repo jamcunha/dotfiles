@@ -6,6 +6,7 @@ set $browser_private brave --incognito
 set $terminal alacritty
 set $file_manager thunar
 set $launcher rofi -show drun
+set $run_launcher rofi -show run
 set $screenshot flameshot gui
 
 font pango:monospace 0
@@ -24,7 +25,8 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+b exec $browser
 bindsym $mod+Shift+b exec $browser_private
 bindsym $mod+f exec $file_manager
-bindsym $mod+d exec $launcher 
+bindsym $mod+p exec $launcher 
+bindsym $mod+Shift+Return exec $run_launcher 
 bindsym $mod+Shift+s exec $screenshot
 
 bindsym $mod+h focus left
@@ -97,7 +99,8 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec $HOME/.config/rofi/powermenu/powermenu.sh
 bindsym $mod+Shift+c kill
 
 for_window [class="^.*"] border pixel 2
@@ -114,6 +117,8 @@ client.placeholder      #2e3440 #2e3440 #727072 #2e3440
 client.urgent           #bf616a #bf616a #d8dee9 #bf616a
 
 client.background       #2e3440
+
+for_window [class="galculator|Galculator"] floating enable
 
 exec --no-startup-id setxkbmap pt
 exec --no-startup-id nitrogen --restore
