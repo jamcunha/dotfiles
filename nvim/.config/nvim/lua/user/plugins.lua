@@ -48,14 +48,14 @@ return packer.startup(function(use)
 
     -- Colorschemes --
     use "arcticicestudio/nord-vim" -- Nord Theme
-    use { "dracula/vim", as="dracula" }
+    use { "dracula/vim", as="dracula" } -- Dracula Theme
 
     -- Languages Syntax and Color Highlight --
     use "PotatoesMaster/i3-vim-syntax" -- i3wm config syntax
     use "kovetskiy/sxhkd-vim" -- sxhkd syntax
     use "norcalli/nvim-colorizer.lua" -- Color Highlight
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- Syntax Highlight
-    use "p00f/nvim-ts-rainbow" -- Treesitter plugin for rainbow brackets
+    -- use "p00f/nvim-ts-rainbow" -- Treesitter plugin for rainbow brackets
 
     -- Completion --
     use "hrsh7th/nvim-cmp"
@@ -76,7 +76,7 @@ return packer.startup(function(use)
     use "b0o/schemastore.nvim" -- Schemastore
     use { "glepnir/lspsaga.nvim", branch = "main" } -- LSP better UI
         -- Java
-        -- use "mfussenegger/nvim-jdtls" -- Java LSP
+    use "mfussenegger/nvim-jdtls" -- Java LSP
 
     -- Telescope --
     use "nvim-telescope/telescope.nvim" -- Fuzzy Finder

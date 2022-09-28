@@ -325,5 +325,5 @@
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
   "gitlens.keymap": "alternate",
-  "workbench.activityBar.visible": false,
+  "explorer.confirmDelete": false,
 }
