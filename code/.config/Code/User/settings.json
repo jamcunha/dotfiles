@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "Dracula",
   "workbench.iconTheme": "material-icon-theme",
   "editor.fontFamily": "'RobotoMono Nerd Font', 'monospace', monospace",
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -326,4 +326,5 @@
   "editor.scrollbar.vertical": "hidden",
   "gitlens.keymap": "alternate",
   "explorer.confirmDelete": false,
+  "workbench.activityBar.visible": false,
 }

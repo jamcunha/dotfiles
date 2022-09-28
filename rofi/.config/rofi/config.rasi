@@ -11,7 +11,7 @@ configuration {
 @theme "/dev/null"
 
 /* Colorschemes */
-@import "colorschemes/nord.rasi"
+@import "colorschemes/dracula.rasi"
 
 window {
   enable: true;

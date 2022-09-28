@@ -34,6 +34,7 @@
   - VSCode Neovim
   - Which Key
   - Nord
+  - Dracula
   - Material Icon Theme
   - GitLens
   - C++ Extension Pack

@@ -239,7 +239,7 @@ schemes:
           white: '#ffffff'
 
 # Set color scheme
-colors: *Nord
+colors: *Dracula
 
 # Bell
 #

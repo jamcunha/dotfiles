@@ -12,7 +12,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "../colorschemes/nord.rasi"
+@import "../colorschemes/dracula.rasi"
 
 * {
     font: "JetBrainsMono Nerd Font 10";
