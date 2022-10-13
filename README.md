@@ -19,7 +19,7 @@
 
 ### Some other dependencies
   - Arch Linux:
-    - pacman -S playerctl flameshot nitrogen
+    - pacman -S playerctl flameshot nitrogen dunst
     - paru -S nerd-fonts-complete ttf-font-awesome
 
 ### i3 autotiling
