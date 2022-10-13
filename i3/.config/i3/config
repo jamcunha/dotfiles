@@ -118,6 +118,7 @@ for_window [class="galculator|Galculator"] floating enable
 exec --no-startup-id setxkbmap pt
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xfce4-power-manager
+exec --no-startup-id dunst
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling
 
