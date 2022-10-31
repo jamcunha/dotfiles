@@ -25,4 +25,3 @@ comment.setup {
         end
     end,
 }
-
