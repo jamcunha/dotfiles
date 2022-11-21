@@ -102,12 +102,6 @@ lspconfig["jsonls"].setup({
   }
 })
 
--- Temporary java lsp (better use mfussenegger/nvim-jdtls)
-lspconfig["jdtls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach
-})
-
 lspconfig["tsserver"].setup({
   capabilities = capabilities,
   on_attach = on_attach

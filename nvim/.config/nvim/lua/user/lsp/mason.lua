@@ -14,7 +14,6 @@ local servers = {
   "html",
   -- "hls",
   "jsonls",
-  "jdtls",
   "tsserver",
   -- "kotlin_language_server",
   "sumneko_lua",
