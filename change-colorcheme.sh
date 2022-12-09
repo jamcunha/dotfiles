@@ -9,7 +9,7 @@ fi
 
 change_dracula () {
     # Alacritty
-    sed -i "s/\*.*$/\*Dracula/" $HOME/.config/alacritty/alacritty.yml
+    sed -i "s/colors: \*.*$/colors: \*Dracula/" $HOME/.config/alacritty/alacritty.yml
 
     # i3
     sed -i "s/\w*.conf$/dracula.conf/" $HOME/.config/i3/config
@@ -25,7 +25,7 @@ change_dracula () {
 
 change_nord () {
     # Alacritty
-    sed -i "s/\*.*$/\*Nord/" $HOME/.config/alacritty/alacritty.yml
+    sed -i "s/colors: \*.*$/colors: \*Nord/" $HOME/.config/alacritty/alacritty.yml
 
     # i3
     sed -i "s/\w*.conf$/nord.conf/" $HOME/.config/i3/config
