@@ -17,6 +17,10 @@ change_dracula () {
     # Polybar
     sed -i "s/themes\/\w*.ini/themes\/dracula.ini/" $HOME/.config/polybar/config.ini
 
+    # Rofi
+    sed -i "s/colorschemes\/.*/colorschemes\/dracula.rasi\"/" $HOME/.config/rofi/config.rasi
+    sed -i "s/colorschemes\/.*/colorschemes\/dracula.rasi\"/" $HOME/.config/rofi/powermenu/powermenu.rasi
+
     # Restart i3
     if [[ $XDG_CURRENT_DESKTOP == "i3" ]]; then
         i3-msg restart >> /dev/null
@@ -32,6 +36,10 @@ change_nord () {
 
     # Polybar
     sed -i "s/themes\/\w*.ini/themes\/nord.ini/" $HOME/.config/polybar/config.ini
+
+    # Rofi
+    sed -i "s/colorschemes\/.*/colorschemes\/nord.rasi\"/" $HOME/.config/rofi/config.rasi
+    sed -i "s/colorschemes\/.*/colorschemes\/nord.rasi\"/" $HOME/.config/rofi/powermenu/powermenu.rasi
 
     # Restart i3
     if [[ $XDG_CURRENT_DESKTOP == "i3" ]]; then
