@@ -21,6 +21,10 @@ change_dracula () {
     sed -i "s/colorschemes\/.*/colorschemes\/dracula.rasi\"/" $HOME/.config/rofi/config.rasi
     sed -i "s/colorschemes\/.*/colorschemes\/dracula.rasi\"/" $HOME/.config/rofi/powermenu/powermenu.rasi
 
+    # Dunst
+    cp $HOME/.config/dunst/colorschemes/dracula $HOME/.config/dunst/dunstrc
+    pkill dunst
+
     # Restart i3
     if [[ $XDG_CURRENT_DESKTOP == "i3" ]]; then
         i3-msg restart >> /dev/null
@@ -40,6 +44,10 @@ change_nord () {
     # Rofi
     sed -i "s/colorschemes\/.*/colorschemes\/nord.rasi\"/" $HOME/.config/rofi/config.rasi
     sed -i "s/colorschemes\/.*/colorschemes\/nord.rasi\"/" $HOME/.config/rofi/powermenu/powermenu.rasi
+
+    # Dunst
+    cp $HOME/.config/dunst/colorschemes/nord $HOME/.config/dunst/dunstrc
+    pkill dunst
 
     # Restart i3
     if [[ $XDG_CURRENT_DESKTOP == "i3" ]]; then
