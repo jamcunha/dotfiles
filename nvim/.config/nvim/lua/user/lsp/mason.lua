@@ -20,7 +20,7 @@ local servers = {
   -- "jedi_language_server",
   -- "rust_analyser",
   "sqls",
-  -- "svelte",
+  "svelte",
   "tailwindcss",
   -- "volar",
   "yamlls",

@@ -10,7 +10,7 @@ if not typescript_status_ok then return end
 local schemastore_status_ok, schemastore = pcall(require, "schemastore")
 if not schemastore_status_ok then return end
 
-local signs = {
+--[[ local signs = {
   { name = "DiagnosticSignError", text = "" },
   { name = "DiagnosticSignWarn", text = "" },
   { name = "DiagnosticSignHint", text = "" },
@@ -19,7 +19,7 @@ local signs = {
 
 for _, sign in ipairs(signs) do
   vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-end
+end ]]
 
 local keymap = vim.keymap.set
 

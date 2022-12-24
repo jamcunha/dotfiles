@@ -14,12 +14,12 @@ nvim_tree.setup {
   diagnostics = {
     enable = true,
     show_on_dirs = true,
-    icons = {
+    --[[ icons = {
       hint = "",
       info = "",
       warning = "",
       error = "",
-    },
+    }, ]]
   },
   git = {
     ignore = false,

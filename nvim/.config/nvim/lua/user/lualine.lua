@@ -24,7 +24,8 @@ lualine.setup {
       { "filename", file_status = true, path = 0 },
     },
     lualine_x = {
-      { "diagnostics", source = {"nvim_diagnostic"}, symbols = { error = " ", warn = " ", info = " ", hint = " " } },
+      -- { "diagnostics", source = {"nvim_diagnostic"}, symbols = { error = " ", warn = " ", info = " ", hint = " " } },
+      { "diagnostics", source = {"nvim_diagnostic"}, symbols = { error = "E ", warn = "W ", info = "I ", hint = "H " } },
       { "diff", symbols = { added = " ", modified = "柳 ", removed = " " } },
     },
     lualine_y = {
