@@ -14,6 +14,9 @@ change_dracula () {
     # i3
     sed -i "s/\w*.conf$/dracula.conf/" $HOME/.config/i3/config
 
+    #bspwm
+    sed -i "s/colorschemes\/.*.sh/colorschemes\/dracula.sh/" $HOME/.config/bspwm/bspwmrc
+
     # Polybar
     sed -i "s/themes\/\w*.ini/themes\/dracula.ini/" $HOME/.config/polybar/config.ini
 
@@ -25,10 +28,15 @@ change_dracula () {
     cp $HOME/.config/dunst/colorschemes/dracula $HOME/.config/dunst/dunstrc
     pkill dunst
 
-    # Restart i3
-    if [[ $XDG_CURRENT_DESKTOP == "i3" ]]; then
-        i3-msg restart >> /dev/null
-    fi
+    # Restart Window Manager
+    case $XDG_SESSION_DESKTOP in
+        "i3")
+            i3-msg restart >> /dev/null
+            ;;
+        "bspwm")
+            bspc wm -r >> /dev/null
+            ;;
+    esac
 }
 
 change_nord () {
@@ -37,6 +45,9 @@ change_nord () {
 
     # i3
     sed -i "s/\w*.conf$/nord.conf/" $HOME/.config/i3/config
+
+    #bspwm
+    sed -i "s/colorschemes\/.*.sh/colorschemes\/nord.sh/" $HOME/.config/bspwm/bspwmrc
 
     # Polybar
     sed -i "s/themes\/\w*.ini/themes\/nord.ini/" $HOME/.config/polybar/config.ini
@@ -49,23 +60,29 @@ change_nord () {
     cp $HOME/.config/dunst/colorschemes/nord $HOME/.config/dunst/dunstrc
     pkill dunst
 
-    # Restart i3
-    if [[ $XDG_CURRENT_DESKTOP == "i3" ]]; then
-        i3-msg restart >> /dev/null
-    fi
+    # Restart Window Manager
+    case $XDG_SESSION_DESKTOP in
+        "i3")
+            i3-msg restart >> /dev/null
+            ;;
+        "bspwm")
+            bspc wm -r >> /dev/null
+            ;;
+    esac
 }
 
 case "$option" in
     "--colorschemes")
         echo "Available colorschemes: nord, dracula"
-    ;;
+        ;;
     "nord") 
         change_nord
-    ;;
+        ;;
     "dracula") 
         change_dracula
-    ;;
-    *) echo "Usage: change-colorscheme [colorscheme]"
-    ;;
+        ;;
+    *)
+        echo "Usage: change-colorscheme [colorscheme]"
+        ;;
 esac
 
