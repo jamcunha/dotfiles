@@ -103,6 +103,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 export BROWSER="brave"
 export TERMINAL="alacritty"
+export TERM="xterm-256color"
 
 if [ -z "$SSH_AUTH_SOCK" ]; then
   eval "$(ssh-agent -s)" > /dev/null 2>&1

@@ -6,8 +6,8 @@ local options = {
   autoindent = true,
   smartindent = true,
   expandtab = true, -- Convert tab to spaces
-  shiftwidth = 2, -- Number of spaces of the indentation
-  tabstop = 2, -- Number of spaces of the indentation
+  shiftwidth = 4, -- Number of spaces of the indentation
+  tabstop = 4, -- Number of spaces of the indentation
   smarttab = true, -- Tab with the number of spaces equal to tabstop
 
   ------------
