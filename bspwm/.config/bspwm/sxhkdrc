@@ -10,14 +10,44 @@ super + Return
 super + p
 	rofi -show drun
 
+# browser
 super + {b,shift + b}
 	{brave,brave --incognito}
 
+# file manager
 super + f
 	thunar
 
+# screenshot
 super + shift + s
 	flameshot gui
+
+# multimedia keys
+XF86AudioRaiseVolume
+	amixer sset "Master" 1%+
+
+XF86AudioLowerVolume
+	amixer sset "Master" 1%-
+
+XF86AudioMute
+	amixer sset "Master" toggle
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPrev
+	playerctl previous
+
+XF86AudioStop
+	playerctl stop
+
+# scratchpads
+
+super + shift + Return
+	$HOME/.config/bspwm/scratchpads/scratchterm.sh
 
 #
 # bspwm hotkeys

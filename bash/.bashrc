@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+export PATH="$HOME/.local/bin:$PATH"
+
 export EDITOR="nvim"
 export BROWSER="brave"
 export TERMINAL="alacritty"
@@ -19,6 +21,7 @@ fi
 alias ls="exa -lah --color=always --group-directories-first"
 alias vim="nvim"
 alias repos="cd $HOME/Documents/repos"
+alias code="bash code $1 &> /dev/null"
 
 ## Use the up and down arrow keys for finding a command in history
 ## (you can write some initial letters of the command first).
