@@ -39,5 +39,5 @@ bspc rule -a spotify desktop='^9'
 $HOME/.config/bspwm/colorschemes/dracula.sh &
 
 # Scratchpads
-bspc rule -a scratchterm sticky=on state=floating rectangle=800x600+550+300
+bspc rule -a scratchterm sticky=on state=floating rectangle=1000x600+475+250
 
