@@ -4,6 +4,11 @@
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# Flutter Stuff
+export PATH="$HOME/.local/flutter/bin/:$PATH"
+export PATH="$HOME/.local/android-sdk/cmdline-tools/latest/bin/:$PATH"
+export PATH="$HOME/.local/android-sdk/emulator/:$HOME/.local/android-sdk/build-tools/:$HOME/.local/android-sdk/platform-tools/:$HOME/.local/android-sdk/platforms/:$HOME/.local/android-sdk/cmdline-tools/:$PATH"
+
 export EDITOR="nvim"
 export BROWSER="brave"
 export TERMINAL="alacritty"
