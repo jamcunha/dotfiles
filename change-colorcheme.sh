@@ -28,6 +28,9 @@ change_dracula () {
     cp $HOME/.config/dunst/colorschemes/dracula $HOME/.config/dunst/dunstrc
     pkill dunst
 
+    # Flatpak
+    sudo flatpak override --env=GTK_THEME=dracula-gtk
+
     # Restart Window Manager
     case $XDG_SESSION_DESKTOP in
         "i3")
@@ -59,6 +62,9 @@ change_nord () {
     # Dunst
     cp $HOME/.config/dunst/colorschemes/nord $HOME/.config/dunst/dunstrc
     pkill dunst
+
+    # Flatpak
+    sudo flatpak override --env=GTK_THEME=Nordic-GTK-Theme
 
     # Restart Window Manager
     case $XDG_SESSION_DESKTOP in
