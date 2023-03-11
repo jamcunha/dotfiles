@@ -4,6 +4,22 @@
 
 killall sxhkd dunst xfce4-power-manager polybar
 
+# Dual monitor stuff (Used on laptop)
+
+if [ -f $HOME/.config/alacritty/alacritty.yml ]; then
+    sed -i "s/size: .*$/size: 8.0/" $HOME/.config/alacritty/alacritty.yml
+fi
+
+unset DUAL_MODE
+if [[ $(xrandr -q | grep "HDMI-2") == *\ connected* ]]; then
+    # external -> Use external monitor as primary
+    # laptop -> Use laptop monitor as primary
+    # STILL TO IMPLEMENT
+
+    export DUAL_MODE="external"
+    $HOME/.config/bspwm/utils/dual.sh &
+fi
+
 # Autostart
 
 sxhkd -c ~/.config/bspwm/sxhkdrc &
@@ -17,6 +33,9 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 bspc config border_width         2
 bspc config window_gap           3
+
+# Use alt for floating windows actions
+bspc config pointer_modifier mod1
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
