@@ -7,65 +7,94 @@ if [[ $option == "" ]]; then
     exit
 fi
 
+if [[ $option = "--colorschemes" ]]; then
+    echo "Available colorschemes: nord, dracula"
+    exit
+fi
+
 change_dracula () {
     # Alacritty
-    sed -i "s/colors: \*.*$/colors: \*Dracula/" $HOME/.config/alacritty/alacritty.yml
+    if [[ -e "$HOME/.config/alacritty/alacritty.yml" ]]; then
+        sed -i "s/colors: \*.*$/colors: \*Dracula/" $HOME/.config/alacritty/alacritty.yml
+    fi
 
     # i3
-    sed -i "s/\w*.conf$/dracula.conf/" $HOME/.config/i3/config
+    if [[ -e "$HOME/.config/i3/config" ]]; then
+        sed -i "s/\w*.conf$/dracula.conf/" $HOME/.config/i3/config
+    fi
 
     #bspwm
-    sed -i "s/colorschemes\/.*.sh/colorschemes\/dracula.sh/" $HOME/.config/bspwm/bspwmrc
+    if [[ -e "$HOME/.config/bspwm/bspwmrc" ]]; then
+        sed -i "s/colorschemes\/.*.sh/colorschemes\/dracula.sh/" $HOME/.config/bspwm/bspwmrc
+    fi
 
     # Polybar
-    sed -i "s/themes\/\w*.ini/themes\/dracula.ini/" $HOME/.config/polybar/config.ini
+    if [[ -e "$HOME/.config/polybar/config.ini" ]]; then
+        sed -i "s/themes\/\w*.ini/themes\/dracula.ini/" $HOME/.config/polybar/config.ini
+    fi
 
     # Rofi
-    sed -i "s/colorschemes\/.*/colorschemes\/dracula.rasi\"/" $HOME/.config/rofi/config.rasi
-    sed -i "s/colorschemes\/.*/colorschemes\/dracula.rasi\"/" $HOME/.config/rofi/powermenu/powermenu.rasi
+    if [[ -e "$HOME/.config/rofi/config.rasi" ]]; then
+        sed -i "s/colorschemes\/.*/colorschemes\/dracula.rasi\"/" $HOME/.config/rofi/config.rasi
+    fi
+
+    if [[ -e "$HOME/.config/rofi/powermenu/powermenu.rasi" ]]; then
+        sed -i "s/colorschemes\/.*/colorschemes\/dracula.rasi\"/" $HOME/.config/rofi/powermenu/powermenu.rasi
+    fi
 
     # Dunst
-    cp $HOME/.config/dunst/colorschemes/dracula $HOME/.config/dunst/dunstrc
-    pkill dunst
+    if [[ -e "$HOME/.config/dunst/dunstrc" && -e "$HOME/.config/dunst/colorschemes/dracula" ]]; then
+        cp $HOME/.config/dunst/colorschemes/dracula $HOME/.config/dunst/dunstrc
+    fi
 
     # Flatpak
-    sudo flatpak override --env=GTK_THEME=dracula-gtk
-
-    # Restart Window Manager
-    case $XDG_SESSION_DESKTOP in
-        "i3")
-            i3-msg restart >> /dev/null
-            ;;
-        "bspwm")
-            bspc wm -r >> /dev/null
-            ;;
-    esac
+    if command -v flatpak &> /dev/null && [ -d "$HOME/.themes/dracula-gtk/" ]; then
+        sudo flatpak override --env=GTK_THEME=dracula-gtk
+    fi
 }
 
 change_nord () {
     # Alacritty
-    sed -i "s/colors: \*.*$/colors: \*Nord/" $HOME/.config/alacritty/alacritty.yml
+    if [[ -e "$HOME/.config/alacritty/alacritty.yml" ]]; then
+        sed -i "s/colors: \*.*$/colors: \*Nord/" $HOME/.config/alacritty/alacritty.yml
+    fi
 
     # i3
-    sed -i "s/\w*.conf$/nord.conf/" $HOME/.config/i3/config
+    if [[ -e "$HOME/.config/i3/config" ]]; then
+        sed -i "s/\w*.conf$/nord.conf/" $HOME/.config/i3/config
+    fi
 
     #bspwm
-    sed -i "s/colorschemes\/.*.sh/colorschemes\/nord.sh/" $HOME/.config/bspwm/bspwmrc
+    if [[ -e "$HOME/.config/bspwm/bspwmrc" ]]; then
+        sed -i "s/colorschemes\/.*.sh/colorschemes\/nord.sh/" $HOME/.config/bspwm/bspwmrc
+    fi
 
     # Polybar
-    sed -i "s/themes\/\w*.ini/themes\/nord.ini/" $HOME/.config/polybar/config.ini
+    if [[ -e "$HOME/.config/polybar/config.ini" ]]; then
+        sed -i "s/themes\/\w*.ini/themes\/nord.ini/" $HOME/.config/polybar/config.ini
+    fi
 
     # Rofi
-    sed -i "s/colorschemes\/.*/colorschemes\/nord.rasi\"/" $HOME/.config/rofi/config.rasi
-    sed -i "s/colorschemes\/.*/colorschemes\/nord.rasi\"/" $HOME/.config/rofi/powermenu/powermenu.rasi
+    if [[ -e "$HOME/.config/rofi/config.rasi" ]]; then
+        sed -i "s/colorschemes\/.*/colorschemes\/nord.rasi\"/" $HOME/.config/rofi/config.rasi
+    fi
+
+    if [[ -e "$HOME/.config/rofi/powermenu/powermenu.rasi" ]]; then
+        sed -i "s/colorschemes\/.*/colorschemes\/nord.rasi\"/" $HOME/.config/rofi/powermenu/powermenu.rasi
+    fi
 
     # Dunst
-    cp $HOME/.config/dunst/colorschemes/nord $HOME/.config/dunst/dunstrc
-    pkill dunst
+    if [[ -e "$HOME/.config/dunst/dunstrc" && -e "$HOME/.config/dunst/colorschemes/dracula" ]]; then
+        cp $HOME/.config/dunst/colorschemes/nord $HOME/.config/dunst/dunstrc
+    fi
 
     # Flatpak
-    sudo flatpak override --env=GTK_THEME=Nordic-GTK-Theme
+    if command -v flatpak &> /dev/null && [ -d "$HOME/.themes/Nordic-GTK-Theme/" ]; then
+        sudo flatpak override --env=GTK_THEME=Nordic-GTK-Theme
+    fi
+}
 
+restart_wm () {
     # Restart Window Manager
     case $XDG_SESSION_DESKTOP in
         "i3")
@@ -78,17 +107,18 @@ change_nord () {
 }
 
 case "$option" in
-    "--colorschemes")
-        echo "Available colorschemes: nord, dracula"
-        ;;
     "nord") 
+        sudo clear
         change_nord
         ;;
     "dracula") 
+        sudo clear
         change_dracula
         ;;
     *)
         echo "Usage: change-colorscheme [colorscheme]"
         ;;
 esac
+
+restart_wm
 
