@@ -106,6 +106,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/flutter/bin/:$PATH"
 export PATH="$HOME/.local/android-sdk/cmdline-tools/latest/bin/:$PATH"
 export PATH="$HOME/.local/android-sdk/emulator/:$HOME/.local/android-sdk/build-tools/:$HOME/.local/android-sdk/platform-tools/:$HOME/.local/android-sdk/platforms/:$HOME/.local/android-sdk/cmdline-tools/:$PATH"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Minix Stuff
 alias minix="cd $HOME/.local/oracle-vb/MINIX-LCOM/shared"

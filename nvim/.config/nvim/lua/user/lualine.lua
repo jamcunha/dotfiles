@@ -4,7 +4,7 @@ if not status_ok then return end
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = "dracula-nvim",
+    theme = "tokyonight",
     component_separators = { left = "", right = ""},
     section_separators = { left = "", right = ""},
     disabled_filetypes = { "packer" },

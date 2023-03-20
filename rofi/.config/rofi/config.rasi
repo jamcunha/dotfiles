@@ -11,7 +11,7 @@ configuration {
 @theme "/dev/null"
 
 /* Colorschemes */
-@import "colorschemes/dracula.rasi"
+@import "colorschemes/tokyonight.rasi"
 
 window {
   enable: true;

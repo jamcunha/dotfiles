@@ -42,6 +42,7 @@ return packer.startup(function(use)
   -- Colorschemes --
   use "shaunsingh/nord.nvim" -- Nord Colorscheme
   use 'Mofiqul/dracula.nvim' -- Dracula Colorscheme
+  use "folke/tokyonight.nvim" -- Tokyo Night Colorscheme
 
   -- Languages Syntax and Color Highlight --
   use "PotatoesMaster/i3-vim-syntax" -- i3wm config syntax
