@@ -1,0 +1,10 @@
+* {
+  background: #1e1e2e;
+  selected: #6c7086;
+  background-search: #f5c2e7;
+  foreground: #cdd6f4;
+  
+  powermenu-power: #f38ba8;
+  powermenu-uptime: #a6e3a1;
+  powermenu-selected: #89dceb;
+}

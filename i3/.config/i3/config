@@ -7,7 +7,7 @@ set $float_mod Mod1
 set $browser brave
 set $browser_private brave --incognito
 set $terminal alacritty
-set $file_manager thunar
+set $file_manager pcmanfm
 set $launcher rofi -show drun
 set $run_launcher rofi -show run
 set $screenshot flameshot gui

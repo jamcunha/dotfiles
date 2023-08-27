@@ -13,10 +13,15 @@ if [ -v $DUAL_MODE ]; then
 fi
 
 if [ $DUAL_MODE == external ]; then
-    if [ $monitor == eDP-1 ]; then
-        bspc node -d "$1"
-    elif [ $monitor == HDMI-2 ]; then
-        bspc node -d "^2:$1"
-    fi
+    case "$monitor" in
+        eDP-1 | eDP-1-1)
+            bspc node -d "$1"
+        ;;
+        HDMI-2 | HDMI-1-2)
+            bspc node -d "^2:$1"
+        ;;
+        *)
+        ;;
+    esac
 fi
 

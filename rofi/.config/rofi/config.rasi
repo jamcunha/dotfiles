@@ -1,6 +1,6 @@
 configuration {
   modi: "run,ssh,drun";
-  font: "RobotoMono Nerd Font 12";
+  font: "Hack Nerd Font 12";
   show-icons: true;
   terminal: "alacritty";
   case-sensitive: false;
@@ -11,7 +11,7 @@ configuration {
 @theme "/dev/null"
 
 /* Colorschemes */
-@import "colorschemes/tokyonight.rasi"
+@import "colorschemes/catppuccin.rasi"
 
 window {
   enable: true;

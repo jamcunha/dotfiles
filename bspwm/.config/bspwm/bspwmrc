@@ -6,10 +6,6 @@ killall sxhkd dunst xfce4-power-manager polybar
 
 # Dual monitor stuff (Used on laptop)
 
-if [ -f $HOME/.config/alacritty/alacritty.yml ]; then
-    sed -i "s/size: .*$/size: 8.0/" $HOME/.config/alacritty/alacritty.yml
-fi
-
 unset DUAL_MODE
 if [[ $(xrandr -q | grep "HDMI-2") == *\ connected* ]]; then
     # external -> Use external monitor as primary
@@ -17,7 +13,20 @@ if [[ $(xrandr -q | grep "HDMI-2") == *\ connected* ]]; then
     # STILL TO IMPLEMENT
 
     export DUAL_MODE="external"
-    $HOME/.config/bspwm/utils/dual.sh &
+    $HOME/.config/bspwm/utils/dual-integrated.sh &
+elif [[ $(xrandr -q | grep "HDMI-1-2") == *\ connected* ]]; then
+    export DUAL_MODE="external"
+    $HOME/.config/bspwm/utils/dual-nvidia.sh &
+else
+    # should have a script for this (dunno if it works)
+    bspc monitor "$BSPWM_EXTERNALMONITOR" --remove > /dev/null
+    xrandr --output "$BSPWM_EXTERNALMONITOR" --off
+    xrandr --auto
+
+    bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+    if [ -f $HOME/.config/alacritty/alacritty.yml ]; then
+        sed -i "s/size: .*$/size: 8.0/" $HOME/.config/alacritty/alacritty.yml
+    fi
 fi
 
 # Autostart
@@ -28,8 +37,6 @@ setxkbmap pt &
 xfce4-power-manager &
 dunst &
 $HOME/.config/polybar/launch.sh &
-
-bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 bspc config border_width         2
 bspc config window_gap           3
@@ -50,12 +57,12 @@ bspc config gapless_monocle      true
 bspc rule -r *:*
 
 bspc rule -a Galculator state=floating
-bspc rule -a discord desktop='^8'
+bspc rule -a discord desktop='^8' follow=off
 bspc rule -a spotify desktop='^9'
 
 # Colors
 
-$HOME/.config/bspwm/colorschemes/tokyonight.sh &
+$HOME/.config/bspwm/colorschemes/catppuccin.sh &
 
 # Scratchpads
 bspc rule -a scratchterm sticky=on state=floating rectangle=1000x600+475+250

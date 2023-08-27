@@ -16,7 +16,7 @@ super + {b,shift + b}
 
 # file manager
 super + f
-	thunar
+	pcmanfm
 
 # screenshot
 super + shift + s

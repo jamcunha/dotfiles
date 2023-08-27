@@ -12,10 +12,10 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "../colorschemes/tokyonight.rasi"
+@import "../colorschemes/catppuccin.rasi"
 
 * {
-    font: "JetBrainsMono Nerd Font 10";
+    font: "Hack Nerd Font 10";
 }
 
 /*

@@ -8,9 +8,50 @@ if [[ $option == "" ]]; then
 fi
 
 if [[ $option = "--colorschemes" ]]; then
-    echo "Available colorschemes: nord, dracula, tokyonight"
+    echo "Available colorschemes: nord, dracula, tokyonight, catppuccin"
     exit
 fi
+
+change_catppuccin () {
+    # Alacritty
+    if [[ -e "$HOME/.config/alacritty/alacritty.yml" ]]; then
+        sed -i "s/colors: \*.*$/colors: \*Catppuccin/" $HOME/.config/alacritty/alacritty.yml
+    fi
+
+    # i3
+    if [[ -e "$HOME/.config/i3/config" ]]; then
+        sed -i "s/\w*.conf$/catppuccin.conf/" $HOME/.config/i3/config
+    fi
+
+    #bspwm
+    if [[ -e "$HOME/.config/bspwm/bspwmrc" ]]; then
+        sed -i "s/colorschemes\/.*.sh/colorschemes\/catppuccin.sh/" $HOME/.config/bspwm/bspwmrc
+    fi
+
+    # Polybar
+    if [[ -e "$HOME/.config/polybar/config.ini" ]]; then
+        sed -i "s/themes\/\w*.ini/themes\/catppuccin.ini/" $HOME/.config/polybar/config.ini
+    fi
+
+    # Rofi
+    if [[ -e "$HOME/.config/rofi/config.rasi" ]]; then
+        sed -i "s/colorschemes\/.*/colorschemes\/catppuccin.rasi\"/" $HOME/.config/rofi/config.rasi
+    fi
+
+    if [[ -e "$HOME/.config/rofi/powermenu/powermenu.rasi" ]]; then
+        sed -i "s/colorschemes\/.*/colorschemes\/catppuccin.rasi\"/" $HOME/.config/rofi/powermenu/powermenu.rasi
+    fi
+
+    # Dunst
+    if [[ -e "$HOME/.config/dunst/dunstrc" && -e "$HOME/.config/dunst/colorschemes/tokyonight" ]]; then
+        cp $HOME/.config/dunst/colorschemes/catppuccin $HOME/.config/dunst/dunstrc
+    fi
+
+    # Flatpak
+    if command -v flatpak &> /dev/null && [ -d "$HOME/.themes/tokyonight-gtk/" ]; then
+        sudo flatpak override --env=GTK_THEME=tokyonight-gtk // TODO
+    fi
+}
 
 change_tokyonight () {
     # Alacritty
@@ -159,6 +200,10 @@ case "$option" in
     "tokyonight")
         sudo clear
         change_tokyonight
+        ;;
+    "catppuccin")
+        sudo clear
+        change_catppuccin
         ;;
     *)
         echo "Usage: change-colorscheme [colorscheme]"

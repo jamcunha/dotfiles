@@ -111,6 +111,10 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # Minix Stuff
 alias minix="cd $HOME/.local/oracle-vb/MINIX-LCOM/shared"
 
+# Go Stuff
+export GOPATH="$HOME/go/bin/"
+export PATH="$PATH:$GOPATH"
+
 export EDITOR="nvim"
 export BROWSER="brave"
 export TERMINAL="alacritty"
@@ -126,4 +130,14 @@ alias ls="exa -lah --color=always --group-directories-first"
 alias vim="nvim"
 alias repos="cd $HOME/Documents/repos"
 alias code="bash code $1 &> /dev/null"
+
+alias git-tree="git fetch && git log --graph --abbrev-commit --decorate --format=format:'%C(bold
+blue)%h%C(reset) - %C(bold
+cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)-
+%an%C(reset)' --all"
+
+# pnpm
+export PNPM_HOME="/home/afonso/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
 

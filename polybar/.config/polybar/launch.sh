@@ -8,10 +8,10 @@ polybar-msg cmd quit
 
 # Launch bar1
 echo "---" | tee -a /tmp/polybar.log
-polybar main 2>&1 | tee -a /tmp/polybar.log & disown
 
-if [[ $(xrandr -q | grep "HDMI-2") == *\ connected* ]]; then
-    polybar aux 2>&1 | tee -a /tmp/polybar.log & disown
-fi
+for m in $(xrandr --listactivemonitors | grep -v "Monitors" | cut -d" " -f3 | cut -d"+" -f2 | cut -d"*" -f2); do
+  echo "$m"
+  MONITOR=$m polybar main 2>&1 | tee -a /tmp/polybar.log & disown
+done
 
 echo "Bars launched..."
