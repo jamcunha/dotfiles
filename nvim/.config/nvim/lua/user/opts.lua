@@ -6,15 +6,15 @@ local options = {
   autoindent = true,
   smartindent = true,
   expandtab = true, -- Convert tab to spaces
-  shiftwidth = 4, -- Number of spaces of the indentation
-  tabstop = 4, -- Number of spaces of the indentation
+  shiftwidth = 2, -- Number of spaces of the indentation
+  tabstop = 2, -- Number of spaces of the indentation
   smarttab = true, -- Tab with the number of spaces equal to tabstop
 
   ------------
   -- Search --
   ------------
 
-  hlsearch = true, -- Search highlight
+  hlsearch = false, -- Search highlight
   ignorecase = true, -- Not case sensitive
   incsearch = true, -- Show partial matches
   smartcase = true, -- Switch to case sensitive when using upper case
@@ -41,6 +41,7 @@ local options = {
   laststatus = 2, -- Status bar
   wildmenu = true, -- Command line tab completion
   number = true, -- Show line number
+  relativenumber = true, -- Show relative line number
   mouse = "a", -- Enable mouse in nvim
   splitbelow = true, -- Horizontal split go below the current window
   splitright = true, -- Vertical split go to the right of the current window
@@ -63,3 +64,24 @@ local options = {
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+local tab_four = {
+  "python",
+  "c",
+  "cpp",
+  "rust",
+  "go",
+  "php",
+}
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "*" },
+  callback = function (args)
+    local ft = vim.bo[args.buf].filetype
+
+    if vim.tbl_contains(tab_four, ft) then
+      vim.opt.shiftwidth = 4
+      vim.opt.tabstop = 4
+    end
+  end
+})
