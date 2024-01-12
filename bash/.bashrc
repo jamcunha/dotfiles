@@ -20,6 +20,12 @@ export TERM="xterm-256color"
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Remap Caps Lock to Escape
+setxkbmap -option caps:escape
+
+# Natural Scrolling for touchpad
+xinput set-prop 15 318 1
+
 # Start ssh agent at shell start
 if [ -z "$SSH_AUTH_SOCK" ] ; then
         eval "$(ssh-agent -s)" > /dev/null 2>&1
@@ -36,4 +42,3 @@ alias code="bash code $1 &> /dev/null"
 ## (you can write some initial letters of the command first).
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
-. "$HOME/.cargo/env"

@@ -7,7 +7,7 @@ set $float_mod Mod1
 set $browser brave
 set $browser_private brave --incognito
 set $terminal alacritty
-set $file_manager pcmanfm
+set $file_manager thunar
 set $launcher rofi -show drun
 set $run_launcher rofi -show run
 set $screenshot flameshot gui
@@ -119,6 +119,7 @@ exec --no-startup-id setxkbmap pt
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id dunst
+exec --no-startup-id setxkbmap -option caps:escape
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling
 

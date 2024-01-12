@@ -15,6 +15,17 @@ fi
 if [ $DUAL_MODE == external ]; then
     case "$monitor" in
         eDP-1 | eDP-1-1)
+            bspc desktop -f "^2:$1"
+        ;;
+        HDMI-2 | HDMI-1-2)
+            bspc desktop -f "$1"
+        ;;
+        *)
+        ;;
+    esac
+elif [ $DUAL_MODE == laptop ]; then
+    case "$monitor" in
+        eDP-1 | eDP-1-1)
             bspc desktop -f "$1"
         ;;
         HDMI-2 | HDMI-1-2)

@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+
+help() {
+  echo "Usage: feup-vpn <command>"
+  echo "Available commands:"
+  echo "  install        - Install FEUP VPN"
+  echo "  uninstall      - Uninstall FEUP VPN"
+  echo "  connect <user> - Connect to FEUP VPN with the specified <user> (e.g. up123456789@fe.up.pt)"
+  echo "  disconnect     - Disconnect from FEUP VPN"
+}
+
+vpn_install() {
+  echo "Installing FEUP VPN..."
+  if [ -f /usr/bin/wget ]; then
+    wget https://vpn.fe.up.pt/CSHELL/snx_install.sh \
+      --directory-prefix=/tmp
+    chmod +x /tmp/snx_install.sh
+    bash /tmp/snx_install.sh
+    rm /tmp/snx_install.sh
+  elif [ -f /usr/bin/curl ]; then
+    cd /tmp
+    curl -O https://vpn.fe.up.pt/CSHELL/snx_install.sh
+    chmod +x /tmp/snx_install.sh
+    bash /tmp/snx_install.sh
+    rm /tmp/snx_install.sh
+    cd - &> /dev/null
+  else
+    echo "Please install wget or curl"
+    exit 1
+  fi
+}
+
+vpn_unninstall() {
+  echo "Uninstalling FEUP VPN..."
+  if [ ! -f /usr/bin/snx ]; then
+    echo "FEUP VPN is not installed"
+    exit 1
+  fi
+  snx_uninstal
+}
+
+vpn_connect() {
+  echo "Connecting to FEUP VPN..."
+  if [ ! -f /usr/bin/snx ]; then
+    echo "Please install FEUP VPN first"
+    exit 1
+  fi
+
+  snx -s vpn.fe.up.pt -u $1
+}
+
+vpn_disconnect() {
+  echo "Disconnecting from FEUP VPN..."
+  if [ ! -f /usr/bin/snx ]; then
+    echo "Please install FEUP VPN first"
+    exit 1
+  fi
+
+  snx -d
+}
+
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run as root"
+  exit 1
+fi
+
+if [ $# -eq 0 ]; then
+  help
+  exit 1
+fi
+
+case $1 in
+  install)
+    vpn_install
+    ;;
+  uninstall)
+    vpn_uninstall
+    ;;
+  connect)
+    vpn_connect $2
+    ;;
+  disconnect)
+    vpn_disconnect
+    ;;
+  *)
+    help
+    exit 1
+    ;;
+esac

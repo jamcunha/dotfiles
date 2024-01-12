@@ -46,5 +46,12 @@ return require("packer").startup(function(use)
      config = function() require("nvim-autopairs").setup {} end
   }
 
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
   use "github/copilot.vim"
 end)

@@ -6,8 +6,8 @@ local options = {
   autoindent = true,
   smartindent = true,
   expandtab = true, -- Convert tab to spaces
-  shiftwidth = 2, -- Number of spaces of the indentation
-  tabstop = 2, -- Number of spaces of the indentation
+  shiftwidth = 4, -- Number of spaces of the indentation
+  tabstop = 4, -- Number of spaces of the indentation
   smarttab = true, -- Tab with the number of spaces equal to tabstop
 
   ------------
@@ -65,13 +65,10 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-local tab_four = {
-  "python",
-  "c",
-  "cpp",
-  "rust",
-  "go",
-  "php",
+local tab_two = {
+  "lua",
+  "javascript",
+  "typescript",
 }
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -79,9 +76,9 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function (args)
     local ft = vim.bo[args.buf].filetype
 
-    if vim.tbl_contains(tab_four, ft) then
-      vim.opt.shiftwidth = 4
-      vim.opt.tabstop = 4
+    if vim.tbl_contains(tab_two, ft) then
+      vim.opt.shiftwidth = 2
+      vim.opt.tabstop = 2
     end
   end
 })

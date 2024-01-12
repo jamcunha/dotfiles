@@ -14,9 +14,9 @@ fi
 
 change_catppuccin () {
     # Alacritty
-    if [[ -e "$HOME/.config/alacritty/alacritty.yml" ]]; then
-        sed -i "s/colors: \*.*$/colors: \*Catppuccin/" $HOME/.config/alacritty/alacritty.yml
-    fi
+    # if [[ -e "$HOME/.config/alacritty/alacritty.yml" ]]; then
+    #     sed -i "s/colors: \*.*$/colors: \*Catppuccin/" $HOME/.config/alacritty/alacritty.yml
+    # fi
 
     # i3
     if [[ -e "$HOME/.config/i3/config" ]]; then
@@ -55,9 +55,9 @@ change_catppuccin () {
 
 change_tokyonight () {
     # Alacritty
-    if [[ -e "$HOME/.config/alacritty/alacritty.yml" ]]; then
-        sed -i "s/colors: \*.*$/colors: \*TokyoNight/" $HOME/.config/alacritty/alacritty.yml
-    fi
+    # if [[ -e "$HOME/.config/alacritty/alacritty.yml" ]]; then
+    #     sed -i "s/colors: \*.*$/colors: \*TokyoNight/" $HOME/.config/alacritty/alacritty.yml
+    # fi
 
     # i3
     if [[ -e "$HOME/.config/i3/config" ]]; then
@@ -96,9 +96,9 @@ change_tokyonight () {
 
 change_dracula () {
     # Alacritty
-    if [[ -e "$HOME/.config/alacritty/alacritty.yml" ]]; then
-        sed -i "s/colors: \*.*$/colors: \*Dracula/" $HOME/.config/alacritty/alacritty.yml
-    fi
+    # if [[ -e "$HOME/.config/alacritty/alacritty.yml" ]]; then
+    #     sed -i "s/colors: \*.*$/colors: \*Dracula/" $HOME/.config/alacritty/alacritty.yml
+    # fi
 
     # i3
     if [[ -e "$HOME/.config/i3/config" ]]; then
@@ -137,9 +137,9 @@ change_dracula () {
 
 change_nord () {
     # Alacritty
-    if [[ -e "$HOME/.config/alacritty/alacritty.yml" ]]; then
-        sed -i "s/colors: \*.*$/colors: \*Nord/" $HOME/.config/alacritty/alacritty.yml
-    fi
+    # if [[ -e "$HOME/.config/alacritty/alacritty.yml" ]]; then
+    #     sed -i "s/colors: \*.*$/colors: \*Nord/" $HOME/.config/alacritty/alacritty.yml
+    # fi
 
     # i3
     if [[ -e "$HOME/.config/i3/config" ]]; then

@@ -108,17 +108,21 @@ export PATH="$HOME/.local/android-sdk/cmdline-tools/latest/bin/:$PATH"
 export PATH="$HOME/.local/android-sdk/emulator/:$HOME/.local/android-sdk/build-tools/:$HOME/.local/android-sdk/platform-tools/:$HOME/.local/android-sdk/platforms/:$HOME/.local/android-sdk/cmdline-tools/:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
-# Minix Stuff
-alias minix="cd $HOME/.local/oracle-vb/MINIX-LCOM/shared"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # Go Stuff
-export GOPATH="$HOME/go/bin/"
-export PATH="$PATH:$GOPATH"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 
 export EDITOR="nvim"
-export BROWSER="brave"
+export BROWSER="firefox"
 export TERMINAL="alacritty"
 export TERM="xterm-256color"
+
+# Natural Scrolling for touchpad
+# xinput list // find device
+# xinput list-prop {device id} | grep "Natural Scrolling"
+# xinput set-prop {device id} {prop-id} 1
 
 if [ -z "$SSH_AUTH_SOCK" ]; then
   eval "$(ssh-agent -s)" > /dev/null 2>&1
@@ -126,8 +130,10 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
   ssh-add ~/.ssh/feup-gitlab > /dev/null 2>&1
 fi
 
-alias ls="exa -lah --color=always --group-directories-first"
+alias ls="eza -lah --color=always --group-directories-first"
 alias vim="nvim"
+alias cat="bat"
+
 alias repos="cd $HOME/Documents/repos"
 alias code="bash code $1 &> /dev/null"
 
@@ -140,4 +146,3 @@ cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(
 export PNPM_HOME="/home/afonso/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
-
