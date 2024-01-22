@@ -67,8 +67,9 @@ end
 
 local tab_two = {
   "lua",
-  "javascript",
-  "typescript",
+  "json",
+  -- "javascript",
+  -- "typescript",
 }
 
 vim.api.nvim_create_autocmd("FileType", {
