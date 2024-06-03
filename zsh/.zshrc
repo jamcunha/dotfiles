@@ -102,27 +102,14 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# Flutter Stuff
-export PATH="$HOME/.local/flutter/bin/:$PATH"
-export PATH="$HOME/.local/android-sdk/cmdline-tools/latest/bin/:$PATH"
-export PATH="$HOME/.local/android-sdk/emulator/:$HOME/.local/android-sdk/build-tools/:$HOME/.local/android-sdk/platform-tools/:$HOME/.local/android-sdk/platforms/:$HOME/.local/android-sdk/cmdline-tools/:$PATH"
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-
 # Go Stuff
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
 export EDITOR="nvim"
-export BROWSER="firefox"
+export BROWSER="brave"
 export TERMINAL="alacritty"
 export TERM="xterm-256color"
-
-# Natural Scrolling for touchpad
-# xinput list // find device
-# xinput list-prop {device id} | grep "Natural Scrolling"
-# xinput set-prop {device id} {prop-id} 1
 
 if [ -z "$SSH_AUTH_SOCK" ]; then
   eval "$(ssh-agent -s)" > /dev/null 2>&1
@@ -146,3 +133,10 @@ cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(
 export PNPM_HOME="/home/afonso/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# bun completions
+[ -s "/home/afonso/.bun/_bun" ] && source "/home/afonso/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

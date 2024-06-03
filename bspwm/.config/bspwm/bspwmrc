@@ -60,6 +60,7 @@ bspc config gapless_monocle      true
 bspc rule -r *:*
 
 bspc rule -a Galculator state=floating
+bspc rule -a matplotlib state=floating
 bspc rule -a discord desktop='^8' follow=off
 bspc rule -a spotify desktop='^9'
 

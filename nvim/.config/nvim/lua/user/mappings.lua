@@ -11,8 +11,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("i", "ii", "<Esc>")
-
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
@@ -31,3 +29,6 @@ vim.keymap.set("n", "<C-S-Left>", ":vertical resize -2 <CR>")
 vim.keymap.set("n", "<C-S-Down>", ":resize +2 <CR>")
 vim.keymap.set("n", "<C-S-Up>", ":resize -2 <CR>")
 vim.keymap.set("n", "<C-S-Right>", ":vertical resize +2 <CR>")
+
+vim.keymap.set("n", "<C-S-j>", "cnext")
+vim.keymap.set("n", "<C-S-k>", "cprev")

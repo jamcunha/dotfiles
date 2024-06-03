@@ -1,51 +1,24 @@
-[colors]
-draw_bold_text_with_bright_colors = true
-
-[colors.bright]
-black = "#585b70"
-blue = "#89b4fa"
-cyan = "#94e2d5"
-green = "#a6e3a1"
-magenta = "#f5c2e7"
-red = "#f38ba8"
-white = "#a6adc8"
-yellow = "#f9e2af"
-
-[colors.cursor]
-cursor = "#f5e0dc"
-text = "#1e1e2e"
-
-[colors.normal]
-black = "#45475a"
-blue = "#89b4fa"
-cyan = "#94e2d5"
-green = "#a6e3a1"
-magenta = "#f5c2e7"
-red = "#f38ba8"
-white = "#bac2de"
-yellow = "#f9e2af"
-
-[colors.primary]
-background = "#1e1e2e"
-foreground = "#cdd6f4"
+import = [
+    "~/.config/alacritty/themes/catppuccin.toml",
+]
 
 [font]
 size = 9.0
 
 [font.bold]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font"
 style = "Regular"
 
 [[keyboard.bindings]]
@@ -126,106 +99,6 @@ action = "ScrollToBottom"
 key = "End"
 mode = "~Alt"
 mods = "Shift"
-
-# [schemes.Catppuccin.bright]
-# black = "#585b70"
-# blue = "#89b4fa"
-# cyan = "#94e2d5"
-# green = "#a6e3a1"
-# magenta = "#f5c2e7"
-# red = "#f38ba8"
-# white = "#a6adc8"
-# yellow = "#f9e2af"
-#
-# [schemes.Catppuccin.cursor]
-# cursor = "#f5e0dc"
-# text = "#1e1e2e"
-#
-# [schemes.Catppuccin.normal]
-# black = "#45475a"
-# blue = "#89b4fa"
-# cyan = "#94e2d5"
-# green = "#a6e3a1"
-# magenta = "#f5c2e7"
-# red = "#f38ba8"
-# white = "#bac2de"
-# yellow = "#f9e2af"
-#
-# [schemes.Catppuccin.primary]
-# background = "#1e1e2e"
-# foreground = "#cdd6f4"
-#
-# [schemes.Dracula.bright]
-# black = "#6272a4"
-# blue = "#d6acff"
-# cyan = "#a4ffff"
-# green = "#69ff94"
-# magenta = "#ff92df"
-# red = "#ff6e6e"
-# white = "#ffffff"
-# yellow = "#ffffa5"
-#
-# [schemes.Dracula.normal]
-# black = "#21222c"
-# blue = "#bd93f9"
-# cyan = "#8be9fd"
-# green = "#50fa7b"
-# magenta = "#ff79c6"
-# red = "#ff5555"
-# white = "#f8f8f2"
-# yellow = "#f1fa8c"
-#
-# [schemes.Dracula.primary]
-# background = "#282a36"
-# foreground = "#f8f8f2"
-#
-# [schemes.Nord.bright]
-# black = "#727072"
-# blue = "#81a1c1"
-# cyan = "#88c0d0"
-# green = "#a3be8c"
-# magenta = "#b48ead"
-# red = "#bf616a"
-# white = "#eceff4"
-# yellow = "#ebcb8b"
-#
-# [schemes.Nord.normal]
-# black = "#403e41"
-# blue = "#5e81ac"
-# cyan = "#88c0d0"
-# green = "#a3be8c"
-# magenta = "#b48ead"
-# red = "#bf616a"
-# white = "#e5e9f0"
-# yellow = "#ebcb8b"
-#
-# [schemes.Nord.primary]
-# background = "#2e3440"
-# foreground = "#d8dee9"
-#
-# [schemes.TokyoNight.bright]
-# black = "#444b6a"
-# blue = "#7da6ff"
-# cyan = "#0db9d7"
-# green = "#b9f27c"
-# magenta = "#bb9af7"
-# red = "#ff7a93"
-# white = "#acb0d0"
-# yellow = "#ff9e64"
-#
-# [schemes.TokyoNight.normal]
-# black = "#32344a"
-# blue = "#7aa2f7"
-# cyan = "#449dab"
-# green = "#9ece6a"
-# magenta = "#ad8ee6"
-# red = "#f7768e"
-# white = "#787c99"
-# yellow = "#e0af68"
-#
-# [schemes.TokyoNight.primary]
-# background = "#1a1b26"
-# foreground = "#a9b1d6"
 
 [window]
 dynamic_padding = true

@@ -9,28 +9,39 @@ help() {
   echo "  disconnect     - Disconnect from FEUP VPN"
 }
 
-vpn_install() {
-  echo "Installing FEUP VPN..."
-  if [ -f /usr/bin/wget ]; then
-    wget https://vpn.fe.up.pt/CSHELL/snx_install.sh \
-      --directory-prefix=/tmp
-    chmod +x /tmp/snx_install.sh
-    bash /tmp/snx_install.sh
-    rm /tmp/snx_install.sh
-  elif [ -f /usr/bin/curl ]; then
-    cd /tmp
-    curl -O https://vpn.fe.up.pt/CSHELL/snx_install.sh
-    chmod +x /tmp/snx_install.sh
-    bash /tmp/snx_install.sh
-    rm /tmp/snx_install.sh
-    cd - &> /dev/null
-  else
-    echo "Please install wget or curl"
+run_as_root() {
+  if [ "$EUID" -ne 0 ]; then
+    echo "Please run as root"
     exit 1
   fi
 }
 
-vpn_unninstall() {
+vpn_install() {
+  run_as_root
+
+  echo "Installing FEUP VPN..."
+  if [ -f /usr/bin/wget ]; then
+    wget https://vpn.fe.up.pt/CSHELL/snx_install.sh \
+      --directory-prefix=/tmp
+          chmod +x /tmp/snx_install.sh
+          bash /tmp/snx_install.sh
+          rm /tmp/snx_install.sh
+        elif [ -f /usr/bin/curl ]; then
+          cd /tmp
+          curl -O https://vpn.fe.up.pt/CSHELL/snx_install.sh
+          chmod +x /tmp/snx_install.sh
+          bash /tmp/snx_install.sh
+          rm /tmp/snx_install.sh
+          cd - &> /dev/null
+        else
+          echo "Please install wget or curl"
+          exit 1
+  fi
+}
+
+vpn_uninstall() {
+  run_as_root
+
   echo "Uninstalling FEUP VPN..."
   if [ ! -f /usr/bin/snx ]; then
     echo "FEUP VPN is not installed"
@@ -58,11 +69,6 @@ vpn_disconnect() {
 
   snx -d
 }
-
-if [ "$EUID" -ne 0 ]; then
-  echo "Please run as root"
-  exit 1
-fi
 
 if [ $# -eq 0 ]; then
   help

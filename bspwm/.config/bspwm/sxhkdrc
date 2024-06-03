@@ -12,8 +12,8 @@ super + p
 
 # browser
 super + {b,shift + b}
-	{firefox,firefox --private-window}
-	# {brave,brave --incognito}
+    {brave,brave --incognito}
+	# {firefox,firefox --private-window}
 
 # file manager
 super + f
