@@ -12,7 +12,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import "../colorschemes/catppuccin.rasi"
+@import "../colorschemes/tokyonight.rasi"
 
 * {
     font: "FiraMono Nerd Font 10";
