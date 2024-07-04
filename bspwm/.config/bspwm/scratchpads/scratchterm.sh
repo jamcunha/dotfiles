@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 # Needs xdotool
 
@@ -15,4 +15,3 @@ else
         rm /tmp/scratchterm && xdo show "$winclass"
     fi
 fi
-

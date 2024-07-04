@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 if [[ $1 =~ ^[0-9]$ ]]; then
     notify-send "change-workspace bspwm error (invalid workspace)"
@@ -35,4 +35,3 @@ elif [ $DUAL_MODE == laptop ]; then
         ;;
     esac
 fi
-

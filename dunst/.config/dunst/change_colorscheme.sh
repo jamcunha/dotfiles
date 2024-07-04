@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 colorscheme=$1
 
@@ -8,4 +8,3 @@ if [[ $colorscheme == "" ]]; then
 fi
 
 cp colorschemes/$colorscheme dunstrc
-
