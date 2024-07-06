@@ -2,7 +2,7 @@
 
 # Kill if is running
 
-killall sxhkd dunst xfce4-power-manager polybar
+killall sxhkd dunst xfce4-power-manager polybar picom
 
 # Dual monitor stuff (Used on laptop)
 
@@ -34,10 +34,9 @@ fi
 
 # Autostart
 
+picom &
 sxhkd -c ~/.config/bspwm/sxhkdrc &
 nitrogen --restore &
-# setxkbmap pt &
-xfce4-power-manager &
 dunst &
 $HOME/.config/polybar/launch.sh &
 

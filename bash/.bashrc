@@ -4,14 +4,6 @@
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# Flutter Stuff
-export PATH="$HOME/.local/flutter/bin/:$PATH"
-export PATH="$HOME/.local/android-sdk/cmdline-tools/latest/bin/:$PATH"
-export PATH="$HOME/.local/android-sdk/emulator/:$HOME/.local/android-sdk/build-tools/:$HOME/.local/android-sdk/platform-tools/:$HOME/.local/android-sdk/platforms/:$HOME/.local/android-sdk/cmdline-tools/:$PATH"
-
-# Minix Stuff
-alias minix="cd $HOME/.local/oracle-vb/MINIX-LCOM/shared/"
-
 export EDITOR="nvim"
 export BROWSER="brave"
 export TERMINAL="alacritty"
@@ -19,12 +11,6 @@ export TERM="xterm-256color"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-# Remap Caps Lock to Escape
-setxkbmap -option caps:escape
-
-# Natural Scrolling for touchpad
-xinput set-prop 15 318 1
 
 # Start ssh agent at shell start
 if [ -z "$SSH_AUTH_SOCK" ] ; then

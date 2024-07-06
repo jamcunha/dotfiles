@@ -103,8 +103,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.local/bin:$PATH"
 
 # Go Stuff
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
+# export GOPATH="$HOME/go"
+# export PATH="$PATH:$GOPATH/bin"
 
 export EDITOR="nvim"
 export BROWSER="brave"
@@ -122,21 +122,9 @@ alias vim="nvim"
 alias cat="bat"
 
 alias repos="cd $HOME/Documents/repos"
-alias code="bash code $1 &> /dev/null"
+# alias code="bash code $1 &> /dev/null"
 
 alias git-tree="git fetch && git log --graph --abbrev-commit --decorate --format=format:'%C(bold
 blue)%h%C(reset) - %C(bold
 cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)-
 %an%C(reset)' --all"
-
-# pnpm
-export PNPM_HOME="/home/afonso/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-# bun completions
-[ -s "/home/afonso/.bun/_bun" ] && source "/home/afonso/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
