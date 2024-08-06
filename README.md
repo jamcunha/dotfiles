@@ -1,5 +1,10 @@
 # My dotfiles
-## WIP
+
+----
+## Dotfiles out of date
+
+Now I'm using NixOS. Config can be found [here](https://github.com/jamcunha/nix-config)
+---
 
 ### How to use:
   - Install stow
@@ -7,9 +12,6 @@
   - stow [whatever config you want]
 
 ## DEPENDENCIES
-
-### XFCE power manager
- - Arch Linux: pacman -S xfce4-power-manager
 
 ### Clipboard working on nvim
   - Arch Linux: pacman -S xsel
@@ -29,4 +31,3 @@
 ### zsh
   - Install zsh and oh-my-zsh
   - Plugins: git, zsh-syntax-highlighting, zsh-autosuggestions
-
